@@ -5,7 +5,10 @@
 # Remember, Railway terminates TLS before it gets to Caddy.
 :{$PORT} {
     handle /v1/* {
-        uri strip_prefix /v1
         reverse_proxy https://stablepay-money-api-production.up.railway.app
+    }
+
+    handle {
+        reverse_proxy https://api.stablepay.ai
     }
 }
