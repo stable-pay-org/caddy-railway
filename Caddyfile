@@ -3,7 +3,9 @@
 # Edit this file according to your needs.
 
 # Remember, Railway terminates TLS before it gets to Caddy.
-:8080
-
-root /www
-file_server
+:{$PORT} {
+    handle /v1/* {
+        uri strip_prefix /v1
+        reverse_proxy https://stablepay-money-api-production.up.railway.app
+    }
+}
