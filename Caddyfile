@@ -10,10 +10,10 @@
     respond /health 200
 
     handle /v1/* {
-        reverse_proxy http://stablepay-money-api.railway.internal
+        reverse_proxy https://stablepay-money-api-production-98aa.up.railway.app
     }
 
     handle {
-        reverse_proxy http://stable-pay.railway.internal
+        reverse_proxy https://stable-pay-production.up.railway.app
     }
 }
