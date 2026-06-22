@@ -6,11 +6,14 @@
 
 # Remember, Railway terminates TLS before it gets to Caddy.
 :{$PORT} {
+
+    respond /health 200
+
     handle /v1/* {
-        reverse_proxy stablepay-money-api.railway.internal:3000
+        reverse_proxy http://stablepay-money-api.railway.internal
     }
 
     handle {
-        reverse_proxy stable-pay.railway.internal:8080
+        reverse_proxy http://stable-pay.railway.internal
     }
 }
