@@ -13,6 +13,6 @@
     }
 
     handle {
-        reverse_proxy https://stable-pay-production.up.railway.app
+        reverse_proxy stable-pay.railway.internal
     }
 }
