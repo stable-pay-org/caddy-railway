@@ -9,7 +9,7 @@
     }
 
     handle /v1/* {
-        reverse_proxy https://stablepay-money-api-production-98aa.up.railway.app
+        reverse_proxy {$ONCHAIN_API_INTERNAL_URL}
     }
 
     handle {
