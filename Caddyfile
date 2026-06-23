@@ -9,7 +9,7 @@
     }
 
     handle /v1/* {
-        reverse_proxy {$ONCHAIN_API_INTERNAL_URL}
+        reverse_proxy stablepay-money-api.railway.internal:8080
     }
 
     handle {
